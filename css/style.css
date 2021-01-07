@@ -1,0 +1,180 @@
+
+/* @font-face {
+    font-family: 'KaushanScript';
+    src: url('../fonts/kaushanscript-regular-webfont.woff') format('woff');
+} */
+
+/*style utama-start*/
+
+body {
+	font: 13px/29px 'KaushanScript';
+}
+
+h1 {
+	color: #77736f;
+	font-size: 50px;
+	margin: 50px 0;
+	text-align: center;
+	text-shadow: 1px 2px 1px #a8a9a2;
+}
+
+.container {
+	width: fit-content;
+	background-color: #5b5863;
+	border-radius: 24px 0 24px 0px;
+	padding: 13px 1px 1px 13px;
+	margin: auto;
+	/* box-shadow: 0px 0px 0px 11px #5b5863; */
+	background-image: linear-gradient(11deg, #cbcfc6, #ff0808);
+}
+
+/* .galeri { 
+	padding-left: 10px;
+	padding-right: 10px;
+	
+} */
+
+
+.galeri li {
+	position: relative;
+	width: 120px;
+	height: 80px;
+	margin-right: 12px;
+	margin-bottom: 12px;
+	border-radius: 3%;
+	/* overflow: hidden; */
+	/* padding: 6px 0; */
+	float: left;
+	/* margin-right: 10px; */
+}
+
+.galeri li a img {
+	
+box-shadow: 0px 0 0px 1px rgb(203, 207, 198);
+	
+border-radius: 11px 0 11px 0;
+}
+
+.galeri li span {
+	position: absolute;
+	top: 0;
+	display: block;
+	background-color: rgba(200, 200, 200, 50%);
+	width: 120px;
+	height: 80px;
+	border-radius: 11px 0 11px 0;
+	text-align: center;
+	line-height: 80px;
+	color: black;
+	opacity: 0;
+	transform: scale(0) rotate(0);
+	transition: 300ms;
+}
+
+
+.galeri li a:hover span {
+	opacity: 100%;
+	transform: scale(1) rotate(360deg);
+}
+
+.overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 0;
+	height: 0;
+	overflow: hidden;
+	text-align: center;
+	background-color: rgba(0, 0, 0, 0);
+	z-index: 9;
+	transition: 1s;
+}
+
+.overlay:target {
+	bottom: 0;
+	right: 0;
+	width: auto;
+	height: auto;
+	background-color: rgba(0, 0, 0, 80%);
+}
+
+.overlay img {
+	z-index: 99;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	
+	box-shadow: 0 0 2px 2px rgba(138, 134, 134, 50%);	
+}
+
+.overlay:target img {
+	
+	
+	animation: ZoomdanFade 1s;
+	
+}
+
+.overlay .alas_xclose {
+	z-index: 999;
+	width: 600px;
+	height: 400px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: transparent;
+
+}
+
+.overlay .close {
+	z-index: 99999;
+	position: absolute;
+	bottom: -28px;
+	right: 0;
+	color: white;
+	font-size: 16px;
+	text-decoration: none;
+	opacity: 0;
+}
+
+.overlay:target .close {
+	animation: slideDownFade 1s 500ms forwards;
+}
+
+
+
+
+
+@keyframes ZoomdanFade {
+	0% {
+		
+		opacity: 0;
+
+	}
+
+	100% {
+		
+		opacity: 100%;
+	}
+}
+
+@keyframes slideDownFade {
+	0% {
+		opacity: 0;
+		margin-top: -20px;
+	}
+
+	100% {
+		opacity: 100%;
+		margin-top: 0;
+	}
+}
+
+
+
+.clear {
+	clear: left;
+}
+
+
